@@ -1,6 +1,5 @@
 # GregDev Blog
 
-
 ## Set up
 
 Install dependencies

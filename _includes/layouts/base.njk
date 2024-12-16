@@ -59,9 +59,11 @@
 			</heading-anchors>
 		</main>
 
+		{%- if page.url == '/' %}
 		<footer>
-			<p><em>Built with <a href="https://www.11ty.dev/">{{ eleventy.generator }}</a></em></p>
+			<p><em>All content copyright Greg Annandale</em></p>
 		</footer>
+		{%- endif %}
 
 		<!-- This page `{{ page.url }}` was built on {% currentBuildDate %} -->
 		<script type="module" src="{% getBundleFileUrl "js" %}"></script>

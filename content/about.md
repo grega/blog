@@ -6,4 +6,6 @@ const eleventyNavigation = {
 ---
 # About
 
-I am a person that writes stuff.
+Software engineering at [Raspberry Pi Foundation](https://www.raspberrypi.org/).
+
+Photography at [gregannandale.com](https://www.gregannandale.com/) (photo stories at [stories.gregannandale.com](https://stories.gregannandale.com/)).
