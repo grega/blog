@@ -7,9 +7,6 @@
 		<meta name="description" content="{{ description or metadata.description }}">
 		<link rel="alternate" href="feed/feed.xml" type="application/atom+xml" title="{{ metadata.title }}">
 
-		{#- Uncomment this if you’d like folks to know that you used Eleventy to build your site!  #}
-		{#- <meta name="generator" content="{{ eleventy.generator }}"> #}
-
 		{#-
 		Plain-text bundles are provided via the `eleventy-plugin-bundle` plugin:
 		1. CSS:
@@ -64,7 +61,7 @@
 
 		{%- if page.url == '/' %}
 		<footer>
-			<p><em>All content copyright Greg Annandale</em></p>
+			{# <p><em>All content copyright Greg Annandale</em></p> #}
 		</footer>
 		{%- endif %}
 

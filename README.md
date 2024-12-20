@@ -11,7 +11,7 @@ npm install
 Build and host on a local development server:
 
 ```
-npx @11ty/eleventy --serve
+npm run start
 ```
 
 Generate a production-ready build to the `_site` folder:
