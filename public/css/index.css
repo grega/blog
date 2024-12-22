@@ -58,6 +58,7 @@ html {
 }
 body {
 	max-width: 60em;
+	padding-bottom: 2em;
 }
 
 /* https://www.a11yproject.com/posts/how-to-hide-content/ */
@@ -187,6 +188,11 @@ header {
 	text-decoration: none;
 }
 
+/* Footer */
+footer {
+	font-size: 0.8125em; /* 11px /16 */
+}
+
 /* Nav */
 .nav {
 	display: flex;
@@ -273,3 +279,13 @@ header {
 	margin-right: 1em;
 }
 
+/* Posts */
+p > picture > img{
+	margin-top: 1em;
+}
+
+figcaption {
+	font-size: 0.8125em; /* 11px /16 */
+	padding-bottom: 1em;
+	text-align: center;
+}
