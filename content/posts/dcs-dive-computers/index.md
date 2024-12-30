@@ -22,7 +22,7 @@ As far as I understand it, the incident played out as follows (this is a summary
 - They were offered a replacement computer and assured that it was set to air mode (but it was in fact still on nitrox mode)
 - They dived assuming that they were on air, but the computer was calculating their NDL (no-decompression limit) based on nitrox
 - They unknowingly exceeded their NDL, didn't make the required decompression stop, and shortly after experienced symptoms of DCS (requiring recompression)
-- They blamed the dive centre, rather than themself, for the incident
+- They blamed the dive centre, rather than themselves, for the incident
 
 In their explanation, they also stated that "nitrox is used to extend bottom time" (hence why the computer's NDL was longer then they would have expected on air).
 
