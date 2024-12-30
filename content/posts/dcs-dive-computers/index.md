@@ -35,8 +35,11 @@ I think that there are a few points worthy of reflection here:
    * A new computer will not have been aware of the previous day of diving, and thus could not fundamentally be trusted to provide accurate modelling and calculations
    * It would indeed have been more prudent to not dive until a sufficient surface interval had passed (eg. >24 hours), but at the very least the dive should have been conducted with a more conservative profile and not pushed the limits of NDL (on either air or nitrox)
    * As for point 2, use a backup computer - after the initial failure this could have been switched out to be the primary (since it would have logged the previous day's dives and thus have an accurate model of the diver's nitrogen loading)
-5. Nitrox and safety margins - this one's more of a criticism of PADI training* and a particular framing of nitrox. The diver was on air, so the specific point is moot, but their statement that nitrox is a means to extend bottom time is a little concerning. Its primary purpose should instead be to increase safety margins (and in this particular case, simply increasing safety margins and being more conservative would have potentially prevented the incident from occuring in the first place)
-6. **If in doubt, don't dive**
+5. Nitrox and safety margins - this one's more of a criticism of PADI training* and a particular framing of nitrox. The diver was on air, so the specific point is moot, but their statement that nitrox is a means to extend bottom time is a little concerning. Its primary purpose should instead be to increase safety margins** (and in this particular case, simply increasing safety margins and being more conservative would have potentially prevented the incident from occuring in the first place)
+6. **If in any doubt, don't dive**
 
+***
 
 \* _"Breathing less nitrogen means you can enjoy longer dives and shorter surface intervals" ([source](https://store.padi.com/en-uk/courses/enriched-air-diver/p/60468-1B2C/))_
+
+\** _I'm more of a fan of BSAC's approach to nitrox, which is firstly about increasing safety margins, and then optionally (and crucially, with appropriate planning) used to extend bottom time ([source](https://www.bsac.com/document/nitrox-workshop-ocean-diver-level-instructor-manual/nitrox-workshop-ocean-diver-level-im.pdf/))_
