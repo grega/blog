@@ -254,6 +254,11 @@ footer {
 	font-weight: bold;
 }
 
+/* Posts */
+li {
+	margin-bottom: 0.5em;
+}
+
 /* Tags */
 .post-tag {
 	display: inline-flex;
