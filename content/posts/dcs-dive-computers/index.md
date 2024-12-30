@@ -26,7 +26,7 @@ As far as I understand it, the incident played out as follows (this is a summary
 
 In their explanation, they also stated that "nitrox is used to extend bottom time" (hence why the computer's NDL was longer then they would have expected on air).
 
-I think there are a few key takeaways:
+I think that there are a few points worthy of reflection here:
 
 1. Responsibility - ultimately, we are responsible for our own safety when diving, unless undergoing specific training beyond our current abilities (whilst under supervision of a suitably experience instructor). There is simply no other excuse here, particularly for someone claiming to have significant experience
 2. Redundancy - never rely on a single piece of equipment, particularly when it's as critical as a dive computer. Utilising a backup computer on every dive is absolutely essential (especially as it should be logging the exact same dive profiles as the primary computer, more on that in a moment)
