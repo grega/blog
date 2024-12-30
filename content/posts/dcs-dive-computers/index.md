@@ -28,7 +28,7 @@ In their explanation, they also stated that "nitrox is used to extend bottom tim
 
 I think that there are a few points worthy of reflection here:
 
-1. Responsibility - ultimately, we are responsible for our own safety when diving, unless undergoing specific training beyond our current abilities (whilst under supervision of a suitably experience instructor). There is simply no other excuse here, particularly for someone claiming to have significant experience
+1. Responsibility - ultimately, we are responsible for our own safety when diving, unless undergoing specific training beyond our current abilities (whilst under supervision of a suitably experienced instructor). There is simply no other excuse here, particularly for someone claiming to have significant experience
 2. Redundancy - never rely on a single piece of equipment, particularly when it's as critical as a dive computer. Utilising a backup computer on every dive is absolutely essential (especially as it should be logging the exact same dive profiles as the primary computer, more on that in a moment)
 3. Don't rush - if unsure about any new equipment, take a moment to understand it before diving with it. Don't assume it is set up correctly; user manuals are trivial to find online and it needn't take more than a few minutes to check the settings (ie. to verify that the computer is set to air mode)
 4. Be conservative - assuming that the individual had dived the day before the incident (and that this was when their computer failed), diving the next day leaves insufficient surface interval for the residual nitrogen to off-gas. In addition to this:
