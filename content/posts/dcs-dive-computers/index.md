@@ -11,7 +11,7 @@ This sort of incident is _relatively_ common (arising for numerous reasons, incl
 
 I don't want to partake in unnecesary finger-pointing and criticism (and my feeling is, perhaps cynically, that based on their post they were fishing for engagement), but I think it's important to reflect on how the incident could have been avoided as well as the importance of taking responsibility for our own safety when diving.
 
-As far as I understand it, the incident played out as follows (this is a summary base on the post that they made, and subsequently deleted - I wasn't going to link to it directly in any case so as to not finger-point nor provide further views / engagement, as already mentioned):
+As far as I understand it, the incident played out as follows (this is a summary based on the post that they made, and subsequently deleted):
 
 - The diver was (probably) on holiday and using a commercial dive centre
 - They stated that they were an experienced diver with around 1000 logged dives (this is quite substantial for a recreational diver)
@@ -34,7 +34,7 @@ I think that there are a few points worthy of reflection here:
 4. Be conservative - assuming that the individual had dived the day before the incident (and that this was when their computer failed), diving the next day leaves insufficient surface interval for the residual nitrogen to off-gas. In addition to this:
    * A new computer will not have been aware of the previous day of diving, and thus could not fundamentally be trusted to provide accurate modelling and calculations
    * It would indeed have been more prudent to not dive until a sufficient surface interval had passed (eg. >24 hours), but at the very least the dive should have been conducted with a more conservative profile and not pushed the limits of NDL (on either air or nitrox)
-   * As for point 2, use a backup computer - after the initial failure this could have been switched out to be the primary (since it would have logged the previous day's dives and thus have an accurate model of the diver's nitrogen loading)
+   * Back to point 2; use a backup computer. After the initial failure this could have been switched out to be the primary (since it would have logged the previous day's dives and thus have an accurate model of the diver's nitrogen loading)
 5. Nitrox and safety margins - this one's more of a criticism of PADI training* and a particular framing of nitrox. The diver was on air, so the specific point is moot, but their statement that nitrox is a means to extend bottom time is a little concerning. Its primary purpose should instead be to increase safety margins** (and in this particular case, simply increasing safety margins and being more conservative would have potentially prevented the incident from occuring in the first place)
 6. **If in any doubt, don't dive**
 
