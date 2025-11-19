@@ -2,6 +2,8 @@
 
 https://blog.gregdev.com/
 
+Hosted on Cloudflare Pages.
+
 ## Set up
 
 Install dependencies
