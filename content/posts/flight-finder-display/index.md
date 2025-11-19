@@ -110,7 +110,7 @@ My father-in-law enjoys woodoworking, so he might well swap out the 3D-printed c
 <figcaption>The Flight Finder Display showing flight information</figcaption>
 
 ![Flight Finder Display image 2](./images/ff-display-2.jpg)
-<figcaption>The Flight Finder Display showing flight information ("refresh bar" depleting)</figcaption>
+<figcaption>The Flight Finder Display showing flight information (and "refresh bar" depleting)</figcaption>
 
 Thanks again to [Colin](https://blog.colinwaddell.com/articles/flight-tracker) for the original inspiration. I'm also hopeful that others will find this somewhat different implementation useful, assuming they have similar use cases to mine.
 
