@@ -99,17 +99,17 @@ My father-in-law enjoys woodoworking, so he might well swap out the 3D-printed c
 
 ## Result
 
-![LED Matrix back](./images/ff-back.jpg)
-<figcaption>LED Matrix with I75 connected (there are two power connectors for powering dual-displays, the one in the centre actually provides power whilst the one top right is just tucked up out of the way)</figcaption>
-
-![I75 device](./images/ff-i75.jpg)
-<figcaption>The I75 close up</figcaption>
-
 ![Flight Finder Display image 1](./images/ff-display-1.jpg)
 <figcaption>The Flight Finder Display showing flight information</figcaption>
 
 ![Flight Finder Display image 2](./images/ff-display-2.jpg)
 <figcaption>The Flight Finder Display showing flight information (and "refresh bar" depleting)</figcaption>
+
+![LED Matrix back](./images/ff-back.jpg)
+<figcaption>LED Matrix with I75 connected (there are two power connectors for powering dual-displays, the one in the centre actually provides power whilst the one top right is just tucked up out of the way)</figcaption>
+
+![I75 device](./images/ff-i75.jpg)
+<figcaption>The I75 close up</figcaption>
 
 Thanks again to [Colin](https://blog.colinwaddell.com/articles/flight-tracker) for the original inspiration. I'm also hopeful that others will find this somewhat different implementation useful, assuming they have similar use cases to mine.
 
