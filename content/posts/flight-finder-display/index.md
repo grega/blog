@@ -2,7 +2,7 @@
 title: Flight Finder Display
 description:
 date: 2025-11-19
-tags: ["posts", "hardware", "raspberry pi", "flight", "flight tracking"]
+tags: ["posts", "hardware", "raspberry pi", "flight", "flight tracking", "pimoroni"]
 ---
 
 My parents-in-law live under the flight path to a major airport, and my father-in-law is a bit of an aviation enthusiast so I wanted to set up a display for him that would show flight information for nearby aircraft.
@@ -16,7 +16,7 @@ Having previously set up a Raspberry Pi + [ADS-B receiver](https://thepihut.com/
 
 ## Hardware
 
-The hardware for this project was fairly simple:
+The hardware for this project was very simple:
 - [64x32 LED Matrix Display](https://shop.pimoroni.com/products/rgb-led-matrix-panel?variant=42312764298)
 - [Pimoroni Interstate 75 W RGB LED Matrix Driver](https://shop.pimoroni.com/products/interstate-75-w?variant=54977948713339) (with the Raspberry Pi RP2350 chip), rather than a full-blown Raspberry Pi board (eg. Zero 2 W)
 - A [3D-printed case](https://www.thingiverse.com/thing:5793070) to hold the display and I75
@@ -25,20 +25,18 @@ I had tested an [InkyFrame](https://shop.pimoroni.com/products/inky-frame-7-3?va
 
 ## Software
 
-The data source for the flight information is FlightRadar 24's (FR24) API, via the [FlightRadar24 Python package](https://pypi.org/project/FlightRadarAPI/), which I query from a server.
+The data source for the flight information is [FlightRadar 24's](https://www.flightradar24.com/) (FR24) API, via the [FlightRadar24 Python package](https://pypi.org/project/FlightRadarAPI/), which I query from a server rather than the I75 device itself.
 
 I wanted to keep the on-device software as simple as possible, partly due to resource constraints, partly to make it easier to maintain as:
 - I may want to build more of the displays in future, so running them against something centralised and off-device would make this easier
-- I'm slightly wary of the FR24 free API accessed via the Python package; it seems as if FR24 are moving towards a paid API model, so I wanted to keep the display code as simple as possible to make it easier to swap out the data source in future if needed (even if I stick with FR24 through their official client, I can at least keep the shape of the data returned the same)
 - The device would be a long way from me (ie. transatlantic) most of the time, so physical access would be very limited once set up
+- I'm slightly wary of the FR24 free API accessed via the Python package; it seems as if FR24 are moving towards a paid API model, so I wanted to keep the display code as simple as possible to make it easier to swap out the data source in future if needed (whilst keeping the shape of the data returned the same, requiring no changes to the device code)
 
-The source for the server component is available on GitHub:
-
-[https://github.com/grega/flight-finder](https://github.com/grega/flight-finder)
+The source for the server component is available on GitHub: [https://github.com/grega/flight-finder](https://github.com/grega/flight-finder)
 
 In brief, it allows to search by location and radius, returning the flight information for the closest aircraft:
 
-```bash
+```json
 ➜  ~ curl -H "X-API-Key: <api-key>" \
   "https://flight-finder.gregdev.com/closest-flight?lat=xx.xxxx&lon=-xx.xxxx&radius=30" | jq
 {
@@ -76,21 +74,19 @@ In brief, it allows to search by location and radius, returning the flight infor
 }
 ```
 
-The server is build using Flask (I'd usually reach for Ruby and Sinatra but I don't write Python often, as you'll likely be able to tell, and thought it would at least be nice to keep the whole stack in Python). It's hosted on a small VPS set up to be multi-tenant and easily deployable using [Dokku](https://dokku.com/) (my go-to for running small / medium applications in a Heroku-like environment). There are docs on setting that up here:
-
-[https://github.com/grega/flight-finder/blob/main/docs/dokku.md](https://github.com/grega/flight-finder/blob/main/docs/dokku.md)
+The server is build using Flask (I'd usually reach for Ruby and Sinatra but I don't write Python often, as you'll likely be able to tell, and thought it would at least be nice to keep the whole stack in Python). It's hosted on a small VPS set up to be multi-tenant and easily deployable using [Dokku](https://dokku.com/) (my go-to for running small / medium applications in a Heroku-like environment). There are docs on setting that up here: [https://github.com/grega/flight-finder/blob/main/docs/dokku.md](https://github.com/grega/flight-finder/blob/main/docs/dokku.md)
 
 For the device I wrote a simple MicroPython script that runs on the Raspberry Pi RP2350 chip on the Interstate 75 W board (using [Pimoroni's Interstate 75 library](https://github.com/pimoroni/interstate75)), which queries the server every minute (configurable) and displays the flight information on the LED matrix:
 
 [https://github.com/grega/flight-finder/tree/main/examples/interstate75](https://github.com/grega/flight-finder/tree/main/examples/interstate75)
 
-There are some utility functions to format the flight information nicely for display on the limited screen space, a "ticker" animation for showing how long until the next refresh, along with a "quiet time" option for turning the display off automatically during certain hours (eg. overnight).
+There are some utility functions to format the flight information nicely for display's limited screen space and resolution, a "ticker" animation for showing how long until the next refresh, along with a "quiet time" option for turning the display off automatically during certain hours (eg. overnight).
 
 ## Case
 
 I printed a simple case (in 2 parts, using PLA) to hold the display and driver board, it's available on Thingiverse: [https://www.thingiverse.com/thing:5793070](https://www.thingiverse.com/thing:5793070)
 
-The case has holes for mounting directly to the screw threads on the back of the LED matrix so assembly was straightforward. I filled in the side cutout prior to printing (since the design assumes a slightly different board mount configuration), and did have to add a cutout at the back for the power (via a right-angled USB-C cable) as I also preferred to run the cable out of the back (for desk mounting) rather than the side (which would be more suitable for wall mounting).
+The case has holes for mounting directly to the screw threads on the back of the LED matrix so assembly was straightforward (though do check your LED matrix aligns first before printing, as there can be variations in layout depending on the manufacturer). I filled in the side cutout prior to printing and did have to add a cutout at the back for the power (via a right-angled USB-C cable) as I preferred to run the cable out of the back (for desk mounting) rather than the side (which would be more suitable for wall mounting).
 
 My father-in-law enjoys woodoworking, so he might well swap out the 3D-printed case for something a little nicer in future.
 
@@ -102,5 +98,7 @@ My father-in-law enjoys woodoworking, so he might well swap out the 3D-printed c
 Thanks again to [Colin](https://blog.colinwaddell.com/articles/flight-tracker) for the original inspiration. I'm also hopeful that others will find this somewhat different implementation useful, assuming they have similar use cases to mine.
 
 ## Future work
+
+Scrolling text for the (often quite long) aircraft type / model would be a nice addition. It's currently truncated to fit the display which mostly works _fine_.
 
 I might look at pulling the flight data from the local ADS-B receiver in future, rather than relying on FR24's API (or remote APIs in general), though I'm aware that these APIs tend to have more complete data (airline, flight number, origin / destination) than what is typically available from the raw ADS-B data so this might not be feasible (or might involve levels of calculation, and correlation with static / on-board data, that could push the limits of the RP2350).
