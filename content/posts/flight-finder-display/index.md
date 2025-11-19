@@ -26,7 +26,7 @@ I had tested an [InkyFrame](https://shop.pimoroni.com/products/inky-frame-7-3?va
 
 ## Software
 
-The data source for the flight information is [Flightradar24's](https://www.flightradar24.com/) (FR24) API, via the [FlightRadar24 Python package](https://pypi.org/project/FlightRadarAPI/), which I query from a server rather than the I75 device itself.
+The data source for the flight information is [Flightradar24's](https://www.flightradar24.com/) (FR24) API, via the [FlightRadarAPI Python package](https://pypi.org/project/FlightRadarAPI/), which I query from a server rather than the I75 device itself.
 
 I wanted to keep the on-device software as simple as possible, partly due to resource constraints, partly to make it easier to maintain as:
 - I may want to build more of the displays in future, so running them against something centralised and off-device would make this easier
