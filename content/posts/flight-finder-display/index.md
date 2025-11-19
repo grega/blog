@@ -77,7 +77,7 @@ In brief, it allows to search by location and radius, returning the flight infor
 }
 ```
 
-The server is build using Flask (I'd usually reach for Ruby and Sinatra as I don't write Python often, as you'll likely be able to tell, but thought it would at least be nice to keep the whole stack in Python). It's hosted on a small VPS set up to be multi-tenant and easy to deploy to using [Dokku](https://dokku.com/) (my go-to for running small / medium applications in a Heroku-like environment). There are docs on setting that up here: [https://github.com/grega/flight-finder/blob/main/docs/dokku.md](https://github.com/grega/flight-finder/blob/main/docs/dokku.md)
+The server is build using Flask (I'd usually reach for Ruby and Sinatra as I don't write Python often, as you'll likely be able to tell, but thought it would at least be nice to keep the whole stack in Python). It's hosted on a small VPS set up to be multi-tenant and easy to deploy to using [Dokku](https://dokku.com/) (my go-to for running small / medium applications in a Heroku-like environment). There are instructions on setting that up here: [https://github.com/grega/flight-finder/blob/main/docs/dokku.md](https://github.com/grega/flight-finder/blob/main/docs/dokku.md)
 
 ### Device software
 
