@@ -20,7 +20,7 @@ Having previously set up a Raspberry Pi + [ADS-B receiver](https://thepihut.com/
 
 The hardware for this project was very simple:
 - [64x32 LED Matrix Display](https://shop.pimoroni.com/products/rgb-led-matrix-panel?variant=42312764298)
-- [Pimoroni Interstate 75 W RGB LED Matrix Driver](https://shop.pimoroni.com/products/interstate-75-w?variant=54977948713339) (with the Raspberry Pi RP2350 chip), rather than a full-blown Raspberry Pi board (eg. Zero 2 W)
+- [Pimoroni Interstate 75 W RGB LED Matrix Driver](https://shop.pimoroni.com/products/interstate-75-w?variant=54977948713339) (I75) with the Raspberry Pi RP2350 chip, rather than a full-blown Raspberry Pi board (eg. Zero 2 W)
 - A [3D-printed case](https://www.thingiverse.com/thing:5793070) to hold the display and I75
 
 I had tested an [InkyFrame](https://shop.pimoroni.com/products/inky-frame-7-3?variant=40541882089555) E Ink display at first, but found the refresh rate too slow for my liking (and the flickering during each refresh cycle was too distracting for something meant to sit on a desk). I'm probably going to repurpose the InkyFrame for a weather forecast display instead (where it can sit for ages consuming very little power, only refreshing every couple of hours).
@@ -78,7 +78,7 @@ In brief, it allows to search by location and radius, returning the flight infor
 }
 ```
 
-The server is build using Flask (I'd usually reach for Ruby and Sinatra but I don't write Python often, as you'll likely be able to tell, and thought it would at least be nice to keep the whole stack in Python). It's hosted on a small VPS set up to be multi-tenant and easily deployable using [Dokku](https://dokku.com/) (my go-to for running small / medium applications in a Heroku-like environment). There are docs on setting that up here: [https://github.com/grega/flight-finder/blob/main/docs/dokku.md](https://github.com/grega/flight-finder/blob/main/docs/dokku.md)
+The server is build using Flask (I'd usually reach for Ruby and Sinatra as I don't write Python often, as you'll likely be able to tell, but thought it would at least be nice to keep the whole stack in Python). It's hosted on a small VPS set up to be multi-tenant and easy to deploy to using [Dokku](https://dokku.com/) (my go-to for running small / medium applications in a Heroku-like environment). There are docs on setting that up here: [https://github.com/grega/flight-finder/blob/main/docs/dokku.md](https://github.com/grega/flight-finder/blob/main/docs/dokku.md)
 
 ### Device software
 
