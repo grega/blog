@@ -11,10 +11,9 @@ This was heavily inspired by the [excellent work done by Colin Waddell](https://
 
 _I've also just noticed, whilst writing this post, Colin's [very recent update](https://blog.colinwaddell.com/articles/dotbox-an-improved-flight-tracker) on building a commercial version of his flight tracker, so do check that out if you're interested in a ready-made solution!_
 
-***
+![Flight Finder Display image 1](./images/ff-display-1.jpg)
 
 Having previously set up a Raspberry Pi + [ADS-B receiver](https://thepihut.com/products/flightaware-pro-stick-plus-usb-sdr-ads-b-receiver) for my father-in-law (which pushes data to all of the major flight tracking services; Flight Radar 24, FlightAware, ADS-B Exchange, AirNav Radar and PlaneFinder), the next step was to create a display that would sit on the office desk and show the source, destination, flight number, distance and aircraft type for planes visibly / audibly flying overhead.
-
 
 ## Hardware
 
