@@ -5,7 +5,7 @@ date: 2025-11-19
 tags: ["posts", "hardware", "raspberry pi", "flight", "flight tracking", "pimoroni"]
 ---
 
-My parents-in-law live under the flight path to a major airport, and my father-in-law is a bit of an aviation enthusiast so I wanted to set up a display for him that would show flight information for nearby aircraft.
+My parents-in-law live under the flight path of a major airport (DFW), and my father-in-law is a bit of an aviation enthusiast so I wanted to set up a display for him that would show flight information for nearby aircraft.
 
 This was heavily inspired by the [excellent work done by Colin Waddell](https://blog.colinwaddell.com/articles/flight-tracker), but differs in some of the hardware choices and the software architecture.
 
