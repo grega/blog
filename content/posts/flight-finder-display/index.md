@@ -9,6 +9,8 @@ My parents-in-law live under the flight path to a major airport, and my father-i
 
 This was heavily inspired by the [excellent work done by Colin Waddell](https://blog.colinwaddell.com/articles/flight-tracker), but differs in some of the hardware choices and the software architecture.
 
+_I've also just noticed, whilst writing this post, Colin's [very recent update](https://blog.colinwaddell.com/articles/dotbox-an-improved-flight-tracker) on building a commercial version of his flight tracker, so do check that out if you're interested in a ready-made solution!_
+
 ***
 
 Having previously set up a Raspberry Pi + [ADS-B receiver](https://thepihut.com/products/flightaware-pro-stick-plus-usb-sdr-ads-b-receiver) for my father-in-law (which pushes data to all of the major flight tracking services; Flight Radar 24, FlightAware, ADS-B Exchange, AirNav Radar and PlaneFinder), the next step was to create a display that would sit on the office desk and show the source, destination, flight number, distance and aircraft type for planes visibly / audibly flying overhead.
@@ -31,6 +33,8 @@ I wanted to keep the on-device software as simple as possible, partly due to res
 - I may want to build more of the displays in future, so running them against something centralised and off-device would make this easier
 - The device would be a long way from me (ie. transatlantic) most of the time, so physical access would be very limited once set up
 - I'm slightly wary of the FR24 free API accessed via the Python package; it seems as if FR24 are moving towards a paid API model, so I wanted to keep the display code as simple as possible to make it easier to swap out the data source in future if needed (whilst keeping the shape of the data returned the same, requiring no changes to the device code)
+
+### Server component
 
 The source for the server component is available on GitHub: [https://github.com/grega/flight-finder](https://github.com/grega/flight-finder)
 
@@ -76,11 +80,15 @@ In brief, it allows to search by location and radius, returning the flight infor
 
 The server is build using Flask (I'd usually reach for Ruby and Sinatra but I don't write Python often, as you'll likely be able to tell, and thought it would at least be nice to keep the whole stack in Python). It's hosted on a small VPS set up to be multi-tenant and easily deployable using [Dokku](https://dokku.com/) (my go-to for running small / medium applications in a Heroku-like environment). There are docs on setting that up here: [https://github.com/grega/flight-finder/blob/main/docs/dokku.md](https://github.com/grega/flight-finder/blob/main/docs/dokku.md)
 
+### Device software
+
 For the device I wrote a simple MicroPython script that runs on the Raspberry Pi RP2350 chip on the Interstate 75 W board (using [Pimoroni's Interstate 75 library](https://github.com/pimoroni/interstate75)), which queries the server every minute (configurable) and displays the flight information on the LED matrix:
 
 [https://github.com/grega/flight-finder/tree/main/examples/interstate75](https://github.com/grega/flight-finder/tree/main/examples/interstate75)
 
-There are some utility functions to format the flight information nicely for display's limited screen space and resolution, a "ticker" animation for showing how long until the next refresh, along with a "quiet time" option for turning the display off automatically during certain hours (eg. overnight).
+There are some utility functions to format the flight information nicely for display's limited screen space and resolution, a bar animation for showing how long until the next refresh, "bright mode" for high levels of ambient light (the default is a little more subdued), along with a "quiet time" option for turning the display off automatically during certain hours (eg. overnight).
+
+I've kept this as simple as I felt was appropriate, and there's certainly room for improvements / nice-to-haves (see ["future work" below](#future-work)).
 
 ## Case
 
@@ -92,8 +100,17 @@ My father-in-law enjoys woodoworking, so he might well swap out the 3D-printed c
 
 ## Result
 
-<!-- ![ScreenBeam ECB6250](./images/screenbeam-ecb6250.jpg) -->
-<!-- <figcaption>ScreenBeam ECB6250</figcaption> -->
+![LED Matrix back](./images/ff-back.jpg)
+<figcaption>LED Matrix with I75 connected (there are two power connectors for powering dual-displays, the one in the centre actually provides power whilst the one top right is just tucked in out of the way)</figcaption>
+
+![I75 device](./images/ff-i75.jpg)
+<figcaption>The I75 close up</figcaption>
+
+![Flight Finder Display image 1](./images/ff-display-1.jpg)
+<figcaption>The Flight Finder Display showing flight information</figcaption>
+
+![Flight Finder Display image 2](./images/ff-display-2.jpg)
+<figcaption>The Flight Finder Display showing flight information ("refresh bar" depleting)</figcaption>
 
 Thanks again to [Colin](https://blog.colinwaddell.com/articles/flight-tracker) for the original inspiration. I'm also hopeful that others will find this somewhat different implementation useful, assuming they have similar use cases to mine.
 
