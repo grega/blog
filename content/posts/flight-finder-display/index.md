@@ -101,7 +101,7 @@ My father-in-law enjoys woodoworking, so he might well swap out the 3D-printed c
 ## Result
 
 ![LED Matrix back](./images/ff-back.jpg)
-<figcaption>LED Matrix with I75 connected (there are two power connectors for powering dual-displays, the one in the centre actually provides power whilst the one top right is just tucked in out of the way)</figcaption>
+<figcaption>LED Matrix with I75 connected (there are two power connectors for powering dual-displays, the one in the centre actually provides power whilst the one top right is just tucked up out of the way)</figcaption>
 
 ![I75 device](./images/ff-i75.jpg)
 <figcaption>The I75 close up</figcaption>
