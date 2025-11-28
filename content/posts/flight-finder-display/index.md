@@ -5,7 +5,7 @@ date: 2025-11-19
 tags: ["posts", "hardware", "raspberry pi", "flight", "flight tracking", "pimoroni"]
 ---
 
-<!-- My parents-in-law live under the flight path of a major airport (DFW), and my father-in-law is a bit of an aviation enthusiast so I wanted to set up a display for him that would show flight information for nearby aircraft. -->
+My parents-in-law live under the flight path of a major airport (DFW), and my father-in-law is a bit of an aviation enthusiast so I wanted to set up a display for him that would show flight information for nearby aircraft.
 
 This was heavily inspired by the [excellent work done by Colin Waddell](https://blog.colinwaddell.com/articles/flight-tracker), but differs in some of the hardware choices and the software architecture.
 
@@ -13,7 +13,7 @@ _I've also just noticed, whilst writing this post, Colin's [very recent update](
 
 ![Flight Finder Display image 1](./images/ff-display-1.jpg)
 
-<!-- Having previously set up a Raspberry Pi + [ADS-B receiver](https://thepihut.com/products/flightaware-pro-stick-plus-usb-sdr-ads-b-receiver) for my father-in-law (which pushes data to all of the major flight tracking services; Flightradar24, FlightAware, ADS-B Exchange, AirNav Radar and PlaneFinder), the next step was to create a display that would sit on the office desk and show the source, destination, flight number, distance and aircraft type for planes visibly / audibly flying overhead. -->
+Having previously set up a Raspberry Pi + [ADS-B receiver](https://thepihut.com/products/flightaware-pro-stick-plus-usb-sdr-ads-b-receiver) for my father-in-law (which pushes data to all of the major flight tracking services; Flightradar24, FlightAware, ADS-B Exchange, AirNav Radar and PlaneFinder), the next step was to create a display that would sit on the office desk and show the source, destination, flight number, distance and aircraft type for planes visibly / audibly flying overhead.
 
 ## Hardware
 
