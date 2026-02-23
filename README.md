@@ -26,6 +26,12 @@ npx @11ty/eleventy
 
 Or you can run [debug mode](https://www.11ty.dev/docs/debugging/) to see all the internals.
 
+## Licence
+
+Blog content (including images) is licensed under the Creative Commons Attribution 4.0 International License (CC BY 4.0).
+
+Website code is licensed under the MIT License.
+
 ## Notes
 
 Reference: https://github.com/11ty/eleventy-base-blog
