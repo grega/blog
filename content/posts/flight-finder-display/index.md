@@ -85,7 +85,7 @@ For the device I wrote a simple MicroPython script that runs on the Raspberry Pi
 
 [https://github.com/grega/flight-finder/tree/main/examples/interstate75](https://github.com/grega/flight-finder/tree/main/examples/interstate75)
 
-There are some utility functions to format the flight information nicely for display's limited screen space and resolution, a bar animation for showing how long until the next refresh, "bright mode" for high levels of ambient light (the default is a little more subdued), along with a "quiet time" option for turning the display off automatically during certain hours (eg. overnight).
+There are some utility functions to format the flight information nicely for the display's limited screen space and resolution, a bar animation for showing how long until the next refresh, "bright mode" for high levels of ambient light (the default is a little more subdued), along with a "quiet time" option for turning the display off automatically during certain hours (eg. overnight).
 
 I've kept this as simple as I felt was appropriate, and there's certainly room for improvements / nice-to-haves (see ["future work" below](#future-work)).
 
