@@ -1,5 +1,5 @@
 ---
-title: HDI - A CLI tool to extract run commands from project READMEs
+title: hdi - A CLI tool to extract run commands from project READMEs
 description:
 date: 2026-03-18
 tags: ["posts", "software", "cli", "open source", "bash"]
