@@ -35,9 +35,15 @@ READMEs are of course wildly inconsistent. Some use `## Set Up`, others `## Gett
 
 By default, `hdi` outputs what it considers to be the most relevant commands across all sections (installation, running, testing). Mode flags allow for narrowing down to just certain sections:
 
-- `hdi install` or `hdi i`
-- `hdi run` or `hdi r`
-- `hdi test` or `hdi t`
+- `hdi install`
+- `hdi run`
+- `hdi test`
+
+or:
+
+- `hdi i`
+- `hdi r`
+- `hdi t`
 
 ## Going interactive
 
