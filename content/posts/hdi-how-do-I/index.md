@@ -11,7 +11,7 @@ Switching between projects often can be a pain. Ruby, Python, Node, Go etc each 
 
 It's a small friction, but I wanted something I could type in any project directory that would just show me the commands I need. No editor, no scrolling, no context switching. Just, how do I get this thing up and running?
 
-A first attempt: [hdi](https://github.com/grega/hdi) — "How do I..."
+A first attempt: [hdi](https://github.com/grega/hdi) - "How do I..."
 
 ## The initial script
 
@@ -31,17 +31,17 @@ $ hdi
   python main.py
 ```
 
-READMEs are of course wildly inconsistent. Some use `## Set Up`, others `## Getting Started`, others `### Quick Start`. Code blocks might be indented inside numbered lists. And you don't want to see JSON response examples mixed in with actual commands, so the script needs to filter out blocks tagged with languages like `json`, `yaml`, `xml`, `env`, and so on.
+READMEs are of course wildly inconsistent. Some use `## Set Up`, others `## Getting Started`, others `### Quick Start`, the list goes on. Code blocks might be indented inside numbered lists. And you don't want to see JSON response examples mixed in with actual commands, so the script needs to filter out blocks tagged with languages like `json`, `yaml`, `xml`, `env`, and so on.
 
 By default, `hdi` outputs what it considers to be the most relevant commands across all sections (installation, running, testing). Mode flags allow for narrowing down to just certain sections:
 
-- `hdi install` / `hdi i`
-- `hdi run` / `hdi r`
-- `hdi test` / `hdi t`
+- `hdi install` or `hdi i`
+- `hdi run` or `hdi r`
+- `hdi test` or `hdi t`
 
 ## Going interactive
 
-The static output was useful, but I kept thinking: I can *see* the command I want to run, I should probably run it from here (or at least copy it)
+The static output was useful, but I kept thinking; I can *see* the command I want to run, I should probably run it from here (or at least be able to copy it).
 
 Somewhat inspired by [fzf](https://github.com/junegunn/fzf) which I use heavily, the next step was an interactive picker:
 
@@ -87,7 +87,7 @@ The [test suite](https://github.com/grega/hdi/tree/main/test) uses [bats-core](h
 
 ## Performance
 
-For a tool that's meant to feel instant, performance matters. The v0.10.0 release brought significant improvements by eliminating subshell overhead.
+For a tool that's meant to feel instant, performance matters. The [v0.10.0 release](https://github.com/grega/hdi/releases/tag/v0.10.0) brought significant improvements by eliminating subshell overhead.
 
 The original implementation made heavy use of pipelines like `echo "$text" | grep -qiE "$PATTERN"`. Pretty readable, but each pipe spawns a subshell and forks an external process. The [optimisation work](https://github.com/grega/hdi/releases/tag/v0.10.0) replaced these with native Bash builtins: `shopt -s nocasematch` with `[[ =~ ]]` for pattern matching, parameter expansion for string manipulation, and pre-compiled regex patterns at startup to avoid rebuilding them in loops (Claude Code was particularly helpful in expanding my very limited understanding of this topic).
 
@@ -108,4 +108,6 @@ There's still plenty to do. The parser is the area with the most room for improv
 
 The source is on GitHub: [github.com/grega/hdi](https://github.com/grega/hdi)
 
-Install with Homebrew (`brew install grega/tap/hdi`) or "just `curl` the script" if you really want to — it's a single file with no dependencies beyond Bash.
+Install with Homebrew: `brew install grega/tap/hdi`
+
+[Feedback](https://github.com/grega/hdi/issues) welcome!
