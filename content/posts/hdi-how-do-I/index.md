@@ -77,7 +77,7 @@ This bumps the version in the script, runs the benchmark suite, generates an upd
 
 ## Automated demos with VHS
 
-There's also a simple programmatic [demo system](https://github.com/grega/hdi/tree/main/demo), built with [VHS](https://github.com/charmbracelet/vhs). VHS allows for scripting terminal interactions in a `.tape` file; keystrokes, pauses, commands etc. These are rendered into a GIF.
+There's also a simple programmatic [demo system](https://github.com/grega/hdi/tree/main/demo), built with [VHS](https://github.com/charmbracelet/vhs). VHS allows for scripting terminal interactions in a `.tape` file; keystrokes, pauses, commands etc. These are rendered as [a GIF](https://github.com/grega/hdi?tab=readme-ov-file#example).
 
 This serves double duty; the GIF is used in the README as a demo, but it's also a handy visual regression test. Because the GIF is committed to the repo, any change to `hdi`'s output shows up as a diff in pull requests. It's surprisingly effective at catching things like broken formatting or unexpected colour changes that unit tests wouldn't flag.
 
