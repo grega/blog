@@ -1,11 +1,11 @@
 ---
-title: HDI - "How do I..."
+title: HDI - A CLI tool to extract run commands from project READMEs
 description:
 date: 2026-03-18
 tags: ["posts", "software", "cli", "open source", "bash"]
 ---
 
-"...run this thing?"
+"How do I ... run this thing?"
 
 Switching between projects often can be a pain. Ruby, Python, Node, Go etc each with its own setup ritual. The cycle is always the same: fire up a code editor, open up the project and its `README.md` file, hunt for the `## Installation` or `## Getting Started` section, find the code block(s), copy / paste into the terminal. Repeat. Even with projects that have been set up and I've used plenty of times, I still have to check; "Does this one use `npm run start` or is it `npm run dev`, or is this one actually `jekyll serve`? Oh, `yarn start`? Ah, no this one _does_ use `docker compose up`".
 
@@ -100,7 +100,9 @@ The results across different README sizes before and after the optimisation are 
 | Large     | 970         | 106        | ~89%        |
 | Stress    | 1101        | 132        | ~88%        |
 
-As mentioned above, benchmarking runs automatically as part of the release process, so performance trends are tracked across every release.
+As mentioned above, benchmarking runs automatically as part of the release process, so performance trends are tracked across every release:
+
+<img src="./images/hdi-results.svg" alt="Performance chart" eleventy:formats="svg">
 
 ## What's next
 
