@@ -17,7 +17,7 @@ A first attempt: [hdi](https://github.com/grega/hdi) - "How do I..."
 
 The initial version was intentionally simple. A Bash script that scans a project's README for markdown headings matching keywords like *install*, *setup*, *prerequisites*, *run*, *usage*, and *getting started*, then extracts the fenced code blocks from those sections and prints them:
 
-```
+```shell-session
 $ cd project-name
 $ hdi
 [hdi] project-name
