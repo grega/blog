@@ -120,4 +120,6 @@ The source is on GitHub: [github.com/grega/hdi](https://github.com/grega/hdi)
 
 Install with Homebrew: `brew install grega/tap/hdi`
 
+Check out the web-based demo: https://grega.github.io/hdi/
+
 [Feedback](https://github.com/grega/hdi/issues) welcome!
