@@ -7,7 +7,9 @@ tags: ["posts", "software", "cli", "open source", "bash"]
 
 "How do I ... run this thing?"
 
-Switching between projects often can be a pain. Ruby, Python, Node, Go etc each with its own setup ritual. The cycle is always the same; fire up a code editor, open up the project and its `README.md` file, hunt for the `## Installation` or `## Getting Started` section, find the code block(s), copy / paste into the terminal. Repeat. Even with projects that have been set up and that I've used plenty of times; "Does this one use `npm run start` or is it `npm run dev`, or is this one actually `jekyll serve`? Oh, `yarn start`? Ah, no this one _does_ use `docker compose`".
+Switching between projects often can be a pain. Ruby, Python, Node, Go etc each with its own setup ritual. The cycle is always the same; fire up a code editor, open up the project and its `README.md` file, hunt for the `## Installation` or `## Getting Started` section, find the code block(s), copy / paste into the terminal. Repeat.
+
+Even with projects that have been set up and that I've used plenty of times; "Does this one use `npm run start` or is it `npm run dev`, or is this one actually `jekyll serve`? Oh, `yarn start`? Ah, no this one _does_ use `docker compose`".
 
 It's a small friction, but I wanted something I could type in any project directory that would just show me the commands I need. No editor, no scrolling, no context switching. Just, how do I get this thing up and running?
 
@@ -47,7 +49,7 @@ or:
 
 ## Going interactive
 
-The static output was useful, but I kept thinking; I can *see* the command I want to run, I should probably run it from here (or at least be able to copy it).
+The static output was useful, but I kept thinking; I can *see* the command I want to run, I should probably be able run it from here (or at least be able to copy it).
 
 Somewhat inspired by [fzf](https://github.com/junegunn/fzf) which I use heavily, the next step was an interactive picker:
 
