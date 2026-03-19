@@ -77,8 +77,8 @@ Each edge case discovered in the wild becomes a new test fixture and a new parsi
 
 As the project grew a little more in scope, particularly when consideraing that others might actually use it, I wanted a release workflow that would catch regressions, particularly performance-related. The [`release`](https://github.com/grega/hdi/blob/main/release) script handles version bumping, tagging, pushing, and also benchmarking in one command:
 
-```
-./release <major|minor|patch>
+```shell-session
+$ release <major|minor|patch>
 ```
 
 This bumps the version in the script, runs the benchmark suite, generates an updated performance chart (which is also rendered and stored as [an SVG in the repo](https://github.com/grega/hdi/blob/main/bench/results.svg)), commits everything, tags it, pushes, then prints the sha256 hash needed to update the [Homebrew tap formula](https://github.com/grega/homebrew-tap/blob/main/Formula/hdi.rb).
