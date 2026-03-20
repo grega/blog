@@ -7,7 +7,9 @@ tags: ["posts", "software", "cli", "open source", "bash"]
 
 "How do I ... run this thing?"
 
-Switching between projects often can be a pain. Ruby, Python, Node, Go etc each with its own setup ritual. The cycle is always the same; fire up a code editor, open up the project and its `README.md` file, hunt for the `## Installation` or `## Getting Started` section, find the code block(s), copy / paste into the terminal. Repeat. Even with projects that have been set up and that I've used plenty of times; "Does this one use `npm run start` or is it `npm run dev`, or is this one actually `jekyll serve`? Oh, `yarn start`? Ah, no this one _does_ use `docker compose`".
+Switching between projects often can be a pain. Ruby, Python, Node, Go etc each with its own setup ritual. The cycle is always the same; fire up a code editor, open up the project and its `README.md` file, hunt for the `## Installation` or `## Getting Started` section, find the code block(s), copy / paste into the terminal. Repeat.
+
+Even with projects that have been set up and that I've used plenty of times; "Does this one use `npm run start` or is it `npm run dev`, or is this one actually `jekyll serve`? Oh, `yarn start`? Ah, no this one _does_ use `docker compose`".
 
 It's a small friction, but I wanted something I could type in any project directory that would just show me the commands I need. No editor, no scrolling, no context switching. Just, how do I get this thing up and running?
 
@@ -47,7 +49,7 @@ or:
 
 ## Going interactive
 
-The static output was useful, but I kept thinking; I can *see* the command I want to run, I should probably run it from here (or at least be able to copy it).
+The static output was useful, but I kept thinking; I can *see* the command I want to run, I should probably be able run it from here (or at least be able to copy it).
 
 Somewhat inspired by [fzf](https://github.com/junegunn/fzf) which I use heavily, the next step was an interactive picker:
 
@@ -75,8 +77,8 @@ Each edge case discovered in the wild becomes a new test fixture and a new parsi
 
 As the project grew a little more in scope, particularly when consideraing that others might actually use it, I wanted a release workflow that would catch regressions, particularly performance-related. The [`release`](https://github.com/grega/hdi/blob/main/release) script handles version bumping, tagging, pushing, and also benchmarking in one command:
 
-```
-./release <major|minor|patch>
+```shell-session
+$ release <major|minor|patch>
 ```
 
 This bumps the version in the script, runs the benchmark suite, generates an updated performance chart (which is also rendered and stored as [an SVG in the repo](https://github.com/grega/hdi/blob/main/bench/results.svg)), commits everything, tags it, pushes, then prints the sha256 hash needed to update the [Homebrew tap formula](https://github.com/grega/homebrew-tap/blob/main/Formula/hdi.rb).
@@ -118,4 +120,22 @@ The source is on GitHub: [github.com/grega/hdi](https://github.com/grega/hdi)
 
 Install with Homebrew: `brew install grega/tap/hdi`
 
+Check out the web-based demo: [https://grega.github.io/hdi](https://grega.github.io/hdi)
+
 [Feedback](https://github.com/grega/hdi/issues) welcome!
+
+**Update:**
+
+A `check` (`c`) subcommand has been added, which runs a version check against the detected dependencies:
+
+```shell-session
+$ cd rails-app
+$ hdi c
+[hdi] rails-app  check
+  ✓ brew           (5.1.0)
+  ✓ bundler        (4.0.8)
+  ✓ rails          (8.1.2)
+  ✗ rspec          not found
+
+  3 found, 1 not found
+```
