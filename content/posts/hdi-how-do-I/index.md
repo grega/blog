@@ -120,6 +120,22 @@ The source is on GitHub: [github.com/grega/hdi](https://github.com/grega/hdi)
 
 Install with Homebrew: `brew install grega/tap/hdi`
 
-Check out the web-based demo: https://grega.github.io/hdi/
+Check out the web-based demo: [https://grega.github.io/hdi](https://grega.github.io/hdi)
 
 [Feedback](https://github.com/grega/hdi/issues) welcome!
+
+**Update:**
+
+A `check` (`c) subcommand has been added, which runs a version check against the detected dependencies:
+
+```shell-session
+$ cd rails-app
+$ hdi c
+[hdi] rails-app  check
+  ✓ brew           (5.1.0)
+  ✓ bundler        (4.0.8)
+  ✓ rails          (8.1.2)
+  ✗ rspec          not found
+
+  3 found, 1 not found
+```
