@@ -126,7 +126,7 @@ Check out the web-based demo: [https://grega.github.io/hdi](https://grega.github
 
 **Update:**
 
-A `check` (`c) subcommand has been added, which runs a version check against the detected dependencies:
+A `check` (`c`) subcommand has been added, which runs a version check against the detected dependencies:
 
 ```shell-session
 $ cd rails-app
