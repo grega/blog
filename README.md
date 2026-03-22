@@ -59,3 +59,5 @@ If your site enforces a [Content Security Policy](https://developer.mozilla.org/
 ## Deploy
 
 Deployed on Cloudflare Pages.
+
+May benefit from a cache purge post-deploy.
