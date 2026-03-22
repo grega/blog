@@ -53,7 +53,7 @@ The static output was useful, but I kept thinking; I can *see* the command I wan
 
 Somewhat inspired by [fzf](https://github.com/junegunn/fzf) which I use heavily, the next step was an interactive picker:
 
-<video autoplay loop muted>
+<video autoplay loop muted width="800">
 	<source src="/img/hdi-demo.mp4" type="video/mp4">
 </video>
 
@@ -139,3 +139,5 @@ $ hdi c
 
   3 found, 1 not found
 ```
+
+Tab and Shift-Tab can also be used to navigate up and down the subsections of the interactive picker.
