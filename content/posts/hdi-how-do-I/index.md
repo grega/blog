@@ -126,12 +126,12 @@ Check out the web-based demo: [https://hdi.gregdev.com](https://hdi.gregdev.com)
 
 **Update:**
 
-A `check` (`c`) subcommand has been added, which runs a version check against the detected dependencies:
+A `needs` (`n`) subcommand has been added, which runs a version check against needed tooling / dependencies:
 
 ```shell-session
 $ cd rails-app
-$ hdi c
-[hdi] rails-app  check
+$ hdi n
+[hdi] rails-app  needs
   ✓ brew           (5.1.0)
   ✓ bundler        (4.0.8)
   ✓ rails          (8.1.2)
@@ -141,3 +141,5 @@ $ hdi c
 ```
 
 Tab and Shift-Tab can also be used to navigate up and down the subsections of the interactive picker.
+
+A few more items are coming, with the hope to release "version 1" in the next couple of weeks...
