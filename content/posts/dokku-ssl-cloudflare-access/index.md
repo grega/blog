@@ -11,20 +11,20 @@ However, things get slightly trickier when you want to put [Cloudflare Access](h
 
 You *could* theoretically set up DNS-01 challenges, but if your app is already proxied through Cloudflare, there is a simple and robust solution: **Cloudflare Origin Certificates**.
 
-By using an Origin Certificate, you maintain strict, end-to-end SSL termination all the way to your Dokku server, while letting Cloudflare’s edge handle the public-facing SSL and Zero Trust authentication.
+By using an Origin Certificate, you maintain end-to-end SSL termination all the way to your Dokku instance, while letting Cloudflare’s edge handle the public-facing SSL and Zero Trust authentication.
 
-Here is the step-by-step process to get it set up:
+Here's the step-by-step process to get it set up:
 
 ### 1. Proxy your domain through Cloudflare
-First, ensure your app's DNS record (e.g., `example-app.yourdomain.com`) is set up in Cloudflare and the proxy status is toggled on (the "orange cloud").
+First, ensure your app's DNS record (eg. `example-app.yourdomain.com`) is set up in Cloudflare and the proxy status is toggled on (the "orange cloud").
 
 *Note: Make sure your SSL/TLS encryption mode in Cloudflare is set to **Full (Strict)**. This ensures Cloudflare verifies the Origin Certificate we are about to create.*
 
 ### 2. Generate an Origin Certificate
 In your Cloudflare dashboard, navigate to **SSL/TLS -> Origin Server** and click **Create Certificate**.
-* Keep the default RSA setting.
-* Ensure your specific subdomain (or a wildcard) is listed in the hostnames.
-* Click create, and Cloudflare will provide you with a **Certificate** and a **Private Key** (PEM format).
+* Keep the default RSA setting
+* Ensure your specific subdomain (or a wildcard) is listed in the hostnames
+* Click create, and Cloudflare will provide you with a **Certificate** and a **Private Key** (PEM format)
 
 ### 3. Save the certificate files
 Copy the contents provided by Cloudflare and save them locally (ideally in a password manager), and then add them as two files in a directory on your Dokku server:
@@ -39,7 +39,7 @@ tar cvf cert-key.tar server.crt server.key
 ```
 
 ### 5. Add the certificate to Dokku
-Now, pipe that tarball directly into Dokku's `certs:add` command for your specific app (in this example, our app is named `example-app`):
+Now, pipe that tarball directly into Dokku's `certs:add` command for your specific app (here our app is named `example-app`):
 
 ```bash
 dokku certs:add example-app < cert-key.tar
@@ -65,4 +65,4 @@ dokku ports:set example-app http:80:5000 https:443:5000
 
 Your Dokku app is now configured with a valid, long-lived Cloudflare Origin Certificate.
 
-Because the connection between Cloudflare and your Dokku droplet is properly encrypted, you can now head over to the Cloudflare Zero Trust (aka Cloudflare One) dashboard and safely create an Access Application for `example-app.yourdomain.com`, with an SSL certificate that'll remain valid for up to 15 years.
+The connection between Cloudflare and your Dokku instance is now encrypted, so head over to the Cloudflare Zero Trust (aka Cloudflare One) dashboard and create an Access Application for `example-app.yourdomain.com`.
