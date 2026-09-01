@@ -5,7 +5,7 @@ date: 2026-04-10
 tags: ["posts", "software", "devops", "dokku", "cloudflare", "ssl"]
 ---
 
-I mostly use [Dokku](https://dokku.com/) to host my personal projects, and usually, securing an app is as simple as running the `dokku-letsencrypt` plugin.
+I mostly use [Dokku](https://dokku.com/) to host my personal projects, and usually, adding SSL / TLS to an app is as simple as running the `dokku-letsencrypt` plugin.
 
 However, things get slightly trickier when you want to put [Cloudflare Access](https://developers.cloudflare.com/cloudflare-one/access-controls/applications/http-apps/) in front of an application. Cloudflare Access blocks all unauthorised traffic that reaches it, and so Let's Encrypt's standard HTTP-01 challenge cannot reach your server to verify the domain, meaning Let's Encrypt renewals will fail.
 
@@ -71,7 +71,7 @@ curl -sk -H 'Host: example-app.yourdomain.com' https://your.server.ip/
 
 If that returns your app, Access can be bypassed.
 
-The fix is "Authenticated Origin Pulls"; Cloudflare presents a client certificate on every request to your origin, and nginx refuses anyone who can't produce it.
+The fix is "Authenticated Origin Pulls" (aka Mutual TLS / mTLS); Cloudflare presents a client certificate on every request to your origin, and nginx refuses anyone who can't produce it.
 
 Cloudflare offers a shared certificate for this, but it's shared across all Cloudflare customers so passing that check proves a request came from Cloudflare, not that it came from your zone. Uploading your own certificate is the key here...
 
@@ -139,9 +139,9 @@ curl -sk -H 'Host: example-app.yourdomain.com' https://your.server.ip/
 
 *Note: If you need to rollback: `rm /home/dokku/example-app/nginx.conf.d/origin-pull.conf && dokku proxy:build-config example-app`*
 
-#### Alternative: Cloudflare Tunnel
+### Alternative: Cloudflare Tunnel
 
-Everything above keeps port 443 open to the world and then filters it. Alternatively, use [Cloudflare Tunnel](https://developers.cloudflare.com/cloudflare-one/networks/connectors/cloudflare-tunnel/) which runs `cloudflared` on the Dokku host which connects out to Cloudflare instead.
+Everything above keeps port 443 open and then filters it. Alternatively, use [Cloudflare Tunnel](https://developers.cloudflare.com/cloudflare-one/networks/connectors/cloudflare-tunnel/) which runs `cloudflared` on the Dokku host which connects out to Cloudflare instead - this ensures that _all_ outgoing connections are proxied through Cloudflare (regardless of whether you want to use Access or not).
 
 ### Wrapping up
 
