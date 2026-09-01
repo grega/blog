@@ -137,7 +137,11 @@ curl -sk -H 'Host: example-app.yourdomain.com' https://your.server.ip/
 # 400 No required SSL certificate was sent
 ```
 
-*Note: If you need to rollback: `rm /home/dokku/example-app/nginx.conf.d/origin-pull.conf && dokku proxy:build-config example-app`*
+If for any reason you need to roll back:
+
+```bash
+rm /home/dokku/example-app/nginx.conf.d/origin-pull.conf && dokku proxy:build-config example-app
+```
 
 ### Alternative: Cloudflare Tunnel
 
@@ -149,4 +153,4 @@ Your Dokku app is now configured with a valid, long-lived Cloudflare Origin Cert
 
 The connection between Cloudflare and your Dokku instance is now encrypted and only Cloudflare can open it, so head over to the Cloudflare Zero Trust (aka Cloudflare One) dashboard and create an Access Application for `example-app.yourdomain.com`.
 
-One last thing worth mentioning; Access protects the edge, not your app itself. If a request ever does reach your origin another way, Access has no control over that, so it's worth having the app verify the signed `Cf-Access-Jwt-Assertion` header itself rather than blinding trusting any request (and blindly assuming that it originated from Cloudflare).
+One last thing worth mentioning; Access protects the edge, not your app itself. If a request ever does reach your origin another way, Access has no control over that, so it's worth having the app verify the signed `Cf-Access-Jwt-Assertion` header itself rather than trusting a request and blindly assuming that it originated from Cloudflare.
